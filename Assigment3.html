@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>Assignement 3</title>
+<!--
+Line 33 is square vertex shader
+Line 52 is square frag shader
+Line 67 is triangle vertex shader. Moves it left and right
+Line 84 in triangle frag shader. Makes it purple
+Lines 105-117 are Assignment Objectives
+
+
+
+
+-->
+
+<script id="vertex-shader-still" type="x-shader/x-vertex">
+    #version 300 es
+
+    in vec4 aPosition;
+
+    void main() {
+
+    gl_Position.x = aPosition.x;
+    gl_Position.y = aPosition.y;
+    gl_Position.z = 0.0;
+    gl_Position.w = 1.0;
+}
+
+</script>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+
+in vec4 aPosition;
+uniform float uTheta;  
+
+void
+main()
+{
+    float s = sin(uTheta);
+    float c = cos(uTheta);
+
+    gl_Position.x = -s*aPosition.y + c*aPosition.x;
+    gl_Position.y =  s*aPosition.x + c*aPosition.y;
+    gl_Position.z = 0.0;
+    gl_Position.w = 1.0;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+precision mediump float;
+
+out vec4 fColor;
+
+void
+main()
+{
+    fColor = vec4(1.0, 0.0, 0.3, 1.0);
+}
+</script>
+
+
+
+<script id="vertex-shader2" type="x-shader/x-vertex">
+#version 300 es
+
+in vec4 bPosition;
+uniform float vTheta;  
+
+void
+main()
+{
+    
+    gl_Position.x = bPosition.x + vTheta;
+    gl_Position.y =  bPosition.y;
+    gl_Position.z = 0.0;
+    gl_Position.w = 1.0;
+}
+</script>
+
+<script id="fragment-shader2" type="x-shader/x-fragment">
+#version 300 es
+precision mediump float;
+
+
+out vec4 fColor2;
+
+void
+main()
+{
+    fColor2 = vec4(0.3, 0, 0.5, 0.7);
+}
+</script>
+
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MVnew.js"></script>
+<script type="text/javascript" src="Assignment3.js"></script>
+</head>
+
+<body>
+
+<!--Assigment Objectives for HTML-->
+<button id="Direction">Change Rotation Direction</button><!--Button-->
+
+<div>
+    Speed <input id="slider" type="range" min="0.3" max="0.6" step="0.01" value="0.5"><!--Slider-->
+</div>
+
+<select id="Controls" size="2">
+    <option value="0">Reverse Direction</option><!--Menu-->
+    <option value="1">Spin Faster</option>
+</select>
+
+<p>Press A and D to move the triangle!</p><!--Key press instructions-->
+
+
+<canvas id="gl-canvas" width="512" height="512">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</body>
+</html>
