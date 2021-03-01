@@ -4,31 +4,13 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <title>Assignement 3</title>
 <!--
-Line 33 is square vertex shader
-Line 52 is square frag shader
-Line 67 is triangle vertex shader. Moves it left and right
-Line 84 in triangle frag shader. Makes it purple
-Lines 105-117 are Assignment Objectives
-
-
-
+Line 15 is square vertex shader
+Line 34 is square frag shader
+Line 49 is triangle vertex shader. Moves it left and right
+Line 66 in triangle frag shader. Makes it purple
+Line 87 are Assignment Objectives
 
 -->
-
-<script id="vertex-shader-still" type="x-shader/x-vertex">
-    #version 300 es
-
-    in vec4 aPosition;
-
-    void main() {
-
-    gl_Position.x = aPosition.x;
-    gl_Position.y = aPosition.y;
-    gl_Position.z = 0.0;
-    gl_Position.w = 1.0;
-}
-
-</script>
 
 <script id="vertex-shader" type="x-shader/x-vertex">
 #version 300 es
