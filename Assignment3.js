@@ -126,8 +126,6 @@ window.onload = function init()
                 right += 0.2;
                 console.log("Slide to the right!");
                 break;
-        
-
         }
     }; 
 
@@ -196,6 +194,5 @@ function render() {
     gl.drawArrays(gl.TRIANGLES, 0, verticesTriangle.length);
 
     requestAnimationFrame(render);
-
 
 }
