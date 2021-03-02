@@ -104,7 +104,7 @@ window.onload = function init()
                 direction = !direction;//same thing as pressing change direction button
                 break;
             case 1:
-                speed += 0.3; //adds 0.03 to speed value
+                speed += 0.3; //adds 0.3 to speed value
                 console.log("Menu working 1");
                 console.log("Speed: ", speed);
                 
