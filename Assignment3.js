@@ -136,7 +136,7 @@ function render() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     if (direction == true) { //Button makes square change direction
-        theta += 0.1 * speed;}
+        theta += 0.2 * speed;}
     else {
         theta -= 0.2 * speed;;}
 
