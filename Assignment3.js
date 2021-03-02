@@ -94,7 +94,8 @@ window.onload = function init()
 
     document.getElementById("slider").onchange = function(event) {  //Slider code
          speed = parseFloat(event.target.value);//slider affects rotation speed
-         console.log("Slider is working. ");         }
+         console.log("Slider is working. ");
+         console.log("Speed: ", speed);         }
 
     document.getElementById("Controls").onclick = function(event) { //Menu code
         switch(event.target.index) {
@@ -105,6 +106,7 @@ window.onload = function init()
             case 1:
                 speed += 0.3; //adds 0.03 to speed value
                 console.log("Menu working 1");
+                console.log("Speed: ", speed);
                 
         }
     }
