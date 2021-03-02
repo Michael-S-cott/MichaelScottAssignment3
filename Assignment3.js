@@ -105,7 +105,7 @@ window.onload = function init()
             case 1:
                 speed += 0.3; //adds 0.03 to speed value
                 console.log("Menu working 1");
-                console.log("Speed: ", theta);
+                
         }
     }
 
