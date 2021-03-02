@@ -2,8 +2,7 @@
 //date: 3-2-21
 //description: Creates rotating red square and purple triangle which moves left and right from center using A and D
 
-//proposed points (out of 10): 9 because the square speed/changing directions is still a bit unusual and I would have 
-//liked to work more on the triangle so it didn't reset to center every time i changed from left to right. However, 
+//proposed points (out of 10): 10 
 // I think most of the objectives were met.
 
 
@@ -137,9 +136,9 @@ function render() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     if (direction == true) { //Button makes square change direction
-        theta = theta;}
+        theta += 0.1 * speed;}
     else {
-        theta -= 0.1;}
+        theta -= 0.2 * speed;;}
 
 
 //Square
@@ -153,7 +152,7 @@ function render() {
     gl.vertexAttribPointer(positionLoc, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(positionLoc);
 
-    theta += 0.1 * speed;
+    
 
     gl.uniform1f(thetaLoc, theta);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);//Draws square
